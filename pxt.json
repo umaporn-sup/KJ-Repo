@@ -7,7 +7,11 @@
         "pxt-button-combos": "github:jwunderl/pxt-button-combos#v0.0.24",
         "animation": "*",
         "arcade-sprite-data": "github:microsoft/arcade-sprite-data#v0.0.5",
-        "settings-blocks": "github:microsoft/pxt-settings-blocks#v1.0.0"
+        "settings-blocks": "github:microsoft/pxt-settings-blocks#v1.0.0",
+        "storyboard": "*",
+        "color-coded-tilemap": "*",
+        "darts": "*",
+        "Color Fading": "github:jwunderl/pxt-color#v0.1.3"
     },
     "description": "",
     "files": [
