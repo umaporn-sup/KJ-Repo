@@ -62,6 +62,13 @@ function nextItem2 () {
         nowItem = 0
     }
 }
+function Bring_to_Front (object2: Sprite) {
+    object2.z += 1
+    object2.say("Bring to Front", 500)
+    music.playTone(262, music.beat(BeatFraction.Half))
+    pointer.z += 1
+    popup.z += 1
+}
 function Init_Game () {
     villageBanner = sprites.create(img`
 5 5 5 5 5 5 5 5 5 4 
@@ -269,19 +276,22 @@ sprites.onOverlap(SpriteKind.Cursor, SpriteKind.Placed, function (sprite, otherS
     if (controller.left.isPressed() && controller.right.isPressed()) {
         Remove_Object(otherSprite)
     }
+    if (controller.up.isPressed() && controller.down.isPressed()) {
+        Bring_to_Front(otherSprite)
+    }
 })
 let flower: Sprite = null
 let bush: Sprite = null
 let tree: Sprite = null
 let house: Sprite = null
-let pointer: Sprite = null
 let villageBanner: Sprite = null
+let pointer: Sprite = null
 let listItem: Sprite[] = []
 let nowItem = 0
 let popup: Sprite = null
 let House_Placed: Sprite = null
 blockSettings.writeString("villageName", "Thawin")
-game.showLongText("Move Cursor   then press A = Create Item,   B = Change Next Item, Left+Right(on Object) = Remove Object", DialogLayout.Center)
+game.showLongText("Move Cursor   then press A = Create Item,   B = Change Next Item, Left+Right(on Object) = Remove Object, Up+Down(on Object) = Bring to Front", DialogLayout.Center)
 Init_Game()
 game.onUpdate(function () {
     pointer.say("*" + sprites.readDataString(listItem[nowItem], "name"))
