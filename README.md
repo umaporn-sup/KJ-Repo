@@ -1,3 +1,4 @@
+#Umaporn Supasitthimethee
 # game-idea-4 ![Build status badge](https://github.com/kchalermdit/game-idea-4/workflows/MakeCode/badge.svg)
 
 
